@@ -45,23 +45,23 @@ namespace EpicLoot
 
         private static ConfigEntry<string> _setItemColor;
         private static ConfigEntry<string> _fineRarityColor;
-		private static ConfigEntry<string> _masterworkRarityColor;
+	private static ConfigEntry<string> _masterworkRarityColor;
         private static ConfigEntry<string> _rareRarityColor;
         private static ConfigEntry<string> _exoticRarityColor;
         private static ConfigEntry<string> _legendaryRarityColor;
-		private static ConfigEntry<string> _ascendedRarityColor;
+	private static ConfigEntry<string> _ascendedRarityColor;
         private static ConfigEntry<int> _fineMaterialIconColor;
-		private static ConfigEntry<int> _masterworkMaterialIconColor;
+	private static ConfigEntry<int> _masterworkMaterialIconColor;
         private static ConfigEntry<int> _rareMaterialIconColor;
         private static ConfigEntry<int> _exoticMaterialIconColor;
         private static ConfigEntry<int> _legendaryMaterialIconColor;
-		private static ConfigEntry<int> _ascendedMaterialIconColor;
+	private static ConfigEntry<int> _ascendedMaterialIconColor;
         private static ConfigEntry<string> _fineRarityDisplayName;
-		private static ConfigEntry<string> _masterworkRarityDisplayName;
+	private static ConfigEntry<string> _masterworkRarityDisplayName;
         private static ConfigEntry<string> _rareRarityDisplayName;
         private static ConfigEntry<string> _exoticRarityDisplayName;
         private static ConfigEntry<string> _legendaryRarityDisplayName;
-		private static ConfigEntry<string> _ascendedRarityDisplayName;
+	private static ConfigEntry<string> _ascendedRarityDisplayName;
         public static ConfigEntry<bool> UseScrollingCraftDescription;
 
         public static readonly List<ItemDrop.ItemData.ItemType> AllowedMagicItemTypes = new List<ItemDrop.ItemData.ItemType>
@@ -120,15 +120,15 @@ namespace EpicLoot
             _exoticMaterialIconColor = Config.Bind("Item Colors", "Exotic Crafting Material Icon Index", 1, "Indicates the color of the icon used for epic crafting materials. A number between 0 and 9. Available options: 0=Red, 1=Orange, 2=Yellow, 3=Green, 4=Teal, 5=Blue, 6=Indigo, 7=Purple, 8=Pink, 9=Gray");
             _legendaryRarityColor = Config.Bind("Item Colors", "Legendary Rarity Color", "Purple", "The color of Legendary rarity items, the highest magic item tier. (Optional, use an HTML hex color starting with # to have a custom color.) Available options: Red, Orange, Yellow, Green, Teal, Blue, Indigo, Purple, Pink, Gray");
             _legendaryMaterialIconColor = Config.Bind("Item Colors", "Legendary Crafting Material Icon Index", 7, "Indicates the color of the icon used for legendary crafting materials. A number between 0 and 9. Available options: 0=Red, 1=Orange, 2=Yellow, 3=Green, 4=Teal, 5=Blue, 6=Indigo, 7=Purple, 8=Pink, 9=Gray");
-			_ascendedRarityColor = Config.Bind("Item Colors", "Ascended Rarity Color", "Red", "The color of Legendary rarity items, the highest magic item tier. (Optional, use an HTML hex color starting with # to have a custom color.) Available options: Red, Orange, Yellow, Green, Teal, Blue, Indigo, Purple, Pink, Gray");
+	    _ascendedRarityColor = Config.Bind("Item Colors", "Ascended Rarity Color", "Red", "The color of Legendary rarity items, the highest magic item tier. (Optional, use an HTML hex color starting with # to have a custom color.) Available options: Red, Orange, Yellow, Green, Teal, Blue, Indigo, Purple, Pink, Gray");
             _ascendedMaterialIconColor = Config.Bind("Item Colors", "Ascended Crafting Material Icon Index", 0, "Indicates the color of the icon used for legendary crafting materials. A number between 0 and 9. Available options: 0=Red, 1=Orange, 2=Yellow, 3=Green, 4=Teal, 5=Blue, 6=Indigo, 7=Purple, 8=Pink, 9=Gray");
             _setItemColor = Config.Bind("Item Colors", "Set Item Color", "#26ffff", "The color of set item text and the set item icon. Use a hex color, default is cyan");
             _fineRarityDisplayName = Config.Bind("Rarity", "Fine Rarity Display Name", "Fine", "The name of the first rarity.");
-			_masterworkRarityDisplayName = Config.Bind("Rarity", "Masterwork Rarity Display Name", "Masterwork", "The name of the second rarity.");
+	    _masterworkRarityDisplayName = Config.Bind("Rarity", "Masterwork Rarity Display Name", "Masterwork", "The name of the second rarity.");
             _rareRarityDisplayName = Config.Bind("Rarity", "Rare Rarity Display Name", "Rare", "The name of the third rarity.");
             _exoticRarityDisplayName = Config.Bind("Rarity", "Exotic Rarity Display Name", "Exotic", "The name of the fourth rarity.");
             _legendaryRarityDisplayName = Config.Bind("Rarity", "Legendary Rarity Display Name", "Legendary", "The name of the fifth rarity.");
-			_ascendedRarityDisplayName = Config.Bind("Rarity", "Ascended Rarity Display Name", "Ascended", "The name of the ascended rarity.");
+	    _ascendedRarityDisplayName = Config.Bind("Rarity", "Ascended Rarity Display Name", "Ascended", "The name of the ascended rarity.");
             UseScrollingCraftDescription = Config.Bind("Crafting UI", "Use Scrolling Craft Description", true, "Changes the item description in the crafting panel to scroll instead of scale when it gets too long for the space.");
 
             MagicItemEffectDefinitions.Initialize(LoadJsonFile<MagicItemEffectsList>("magiceffects.json"));
@@ -173,18 +173,18 @@ namespace EpicLoot
             Assets.GenericItemBgSprite = assetBundle.LoadAsset<Sprite>("GenericItemBg");
             Assets.SmallButtonEnchantOverlay = assetBundle.LoadAsset<Sprite>("SmallButtonEnchantOverlay");
             Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Fine] = assetBundle.LoadAsset<GameObject>("FineLootBeam");
-			Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Masterwork] = assetBundle.LoadAsset<GameObject>("MasterworkLootBeam");
+			Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Masterwork] = assetBundle.LoadAsset<GameObject>("FineLootBeam");
             Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Rare] = assetBundle.LoadAsset<GameObject>("RareLootBeam");
             Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Exotic] = assetBundle.LoadAsset<GameObject>("ExoticLootBeam");
             Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Legendary] = assetBundle.LoadAsset<GameObject>("LegendaryLootBeam");
-			Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Ascended] = assetBundle.LoadAsset<GameObject>("AscendedLootBeam");
+			Assets.MagicItemLootBeamPrefabs[(int)ItemRarity.Ascended] = assetBundle.LoadAsset<GameObject>("LegendaryLootBeam");
 
             Assets.MagicItemDropSFX[(int)ItemRarity.Fine] = assetBundle.LoadAsset<AudioClip>("FineItemDrop");
-			Assets.MagicItemDropSFX[(int)ItemRarity.Masterwork] = assetBundle.LoadAsset<AudioClip>("MasterworkItemDrop");
+			Assets.MagicItemDropSFX[(int)ItemRarity.Masterwork] = assetBundle.LoadAsset<AudioClip>("FineItemDrop");
             Assets.MagicItemDropSFX[(int)ItemRarity.Rare] = assetBundle.LoadAsset<AudioClip>("RareItemDrop");
             Assets.MagicItemDropSFX[(int)ItemRarity.Exotic] = assetBundle.LoadAsset<AudioClip>("ExoticItemDrop");
             Assets.MagicItemDropSFX[(int)ItemRarity.Legendary] = assetBundle.LoadAsset<AudioClip>("LegendaryItemDrop");
-			Assets.MagicItemDropSFX[(int)ItemRarity.Ascended] = assetBundle.LoadAsset<AudioClip>("AscendedItemDrop");
+			Assets.MagicItemDropSFX[(int)ItemRarity.Ascended] = assetBundle.LoadAsset<AudioClip>("LegendaryItemDrop");
 
             LoadCraftingMaterialAssets(assetBundle, "Runestone");
 
@@ -614,11 +614,11 @@ namespace EpicLoot
             t.AppendLine("|Rarity|1|2|3|4|5|6|");
             t.AppendLine("|--|--|--|--|--|--|--|");
             t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Fine));
-			t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Masterwork));
+	    t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Masterwork));
             t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Rare));
             t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Exotic));
             t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Legendary));
-			t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Ascended));
+	    t.AppendLine(GetMagicEffectCountTableLine(ItemRarity.Ascended));
             t.AppendLine();
 
             // Magic item effects
@@ -922,7 +922,7 @@ namespace EpicLoot
             {
                 case ItemRarity.Fine:
                     return Mathf.Clamp(_fineMaterialIconColor.Value, 0, 9);
-				case ItemRarity.Masterwork:
+		case ItemRarity.Masterwork:
                     return Mathf.Clamp(_masterworkMaterialIconColor.Value, 0, 9);
                 case ItemRarity.Rare:
                     return Mathf.Clamp(_rareMaterialIconColor.Value, 0, 9);
@@ -930,7 +930,7 @@ namespace EpicLoot
                     return Mathf.Clamp(_exoticMaterialIconColor.Value, 0, 9);
                 case ItemRarity.Legendary:
                     return Mathf.Clamp(_legendaryMaterialIconColor.Value, 0, 9);
-				case ItemRarity.Ascended:
+		case ItemRarity.Ascended:
                     return Mathf.Clamp(_ascendedMaterialIconColor.Value, 0, 9);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(rarity), rarity, null);
