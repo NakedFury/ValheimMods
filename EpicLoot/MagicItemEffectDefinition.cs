@@ -207,11 +207,11 @@ namespace EpicLoot
             switch (itemRarity)
             {
                 case ItemRarity.Fine: return ValuesPerRarity.Fine;
-				case ItemRarity.Masterwork: return ValuesPerRarity.Masterwork;
+		case ItemRarity.Masterwork: return ValuesPerRarity.Masterwork;
                 case ItemRarity.Rare: return ValuesPerRarity.Rare;
                 case ItemRarity.Exotic: return ValuesPerRarity.Exotic;
                 case ItemRarity.Legendary: return ValuesPerRarity.Legendary;
-				case ItemRarity.Ascended: return ValuesPerRarity.Ascended;
+		case ItemRarity.Ascended: return ValuesPerRarity.Ascended;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(itemRarity), itemRarity, null);
             }
