@@ -8,12 +8,12 @@ namespace EpicLoot
 {
     public enum ItemRarity
     {
-		Fine,
+	Fine,
         Masterwork,
         Rare,
         Exotic,
         Legendary,
-		Ascended
+	Ascended
     }
 
     [Serializable]
