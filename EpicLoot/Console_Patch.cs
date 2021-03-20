@@ -77,20 +77,26 @@ namespace EpicLoot
 
             for (var i = 0; i < count; i++)
             {
-                var rarityTable = new[] { 1, 1, 1, 1 };
+                var rarityTable = new[] { 1, 1, 1, 1, 1, 1 };
                 switch (rarityArg.ToLowerInvariant())
                 {
-                    case "magic":
-                        rarityTable = new[] { 1, 0, 0, 0, };
+                    case "fine":
+                        rarityTable = new[] { 1, 0, 0, 0, 0, 0 };
+                        break;
+                    case "masterwork":
+                        rarityTable = new[] { 0, 1, 0, 0, 0, 0 };
                         break;
                     case "rare":
-                        rarityTable = new[] { 0, 1, 0, 0, };
+                        rarityTable = new[] { 0, 0, 1, 0, 0, 0 };
                         break;
-                    case "epic":
-                        rarityTable = new[] { 0, 0, 1, 0, };
+                    case "exotic":
+                        rarityTable = new[] { 0, 0, 0, 1, 0, 0 };
                         break;
                     case "legendary":
-                        rarityTable = new[] { 0, 0, 0, 1, };
+                        rarityTable = new[] { 0, 0, 0, 0, 1, 0 };
+                        break;
+                    case "ascended":
+                        rarityTable = new[] { 0, 0, 0, 0, , 1 };
                         break;
                 }
 
