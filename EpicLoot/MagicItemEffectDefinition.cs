@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -199,17 +199,19 @@ namespace EpicLoot
 
         public bool HasRarityValues()
         {
-            return ValuesPerRarity.Magic != null && ValuesPerRarity.Epic != null && ValuesPerRarity.Rare != null && ValuesPerRarity.Legendary != null;
+            return ValuesPerRarity.Fine != null && ValuesPerRarity.Masterwork != null && ValuesPerRarity.Rare != null && ValuesPerRarity.Exotic != null && ValuesPerRarity.Legendary != null && ValuesPerRarity.Ascended != null;
         }
 
         public ValueDef GetValuesForRarity(ItemRarity itemRarity)
         {
             switch (itemRarity)
             {
-                case ItemRarity.Magic: return ValuesPerRarity.Magic;
+                case ItemRarity.Fine: return ValuesPerRarity.Fine;
+				case ItemRarity.Masterwork: return ValuesPerRarity.Masterwork;
                 case ItemRarity.Rare: return ValuesPerRarity.Rare;
-                case ItemRarity.Epic: return ValuesPerRarity.Epic;
+                case ItemRarity.Exotic: return ValuesPerRarity.Exotic;
                 case ItemRarity.Legendary: return ValuesPerRarity.Legendary;
+				case ItemRarity.Ascended: return ValuesPerRarity.Ascended;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(itemRarity), itemRarity, null);
             }
