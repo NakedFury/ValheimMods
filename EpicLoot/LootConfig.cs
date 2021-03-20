@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Common;
 
@@ -43,10 +43,12 @@ namespace EpicLoot
     [Serializable]
     public class MagicEffectsCountConfig
     {
-        public int[][] Magic;
+        public int[][] Fine;
+		public int[][] Masterwork;
         public int[][] Rare;
-        public int[][] Epic;
+        public int[][] Exotic;
         public int[][] Legendary;
+		public int[][] Ascended;
     }
 
     [Serializable]
