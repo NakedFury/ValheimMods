@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Common;
@@ -309,14 +309,18 @@ namespace EpicLoot
         {
             switch (rarity)
             {
-                case ItemRarity.Magic:
-                    return Config.MagicEffectsCount.Magic.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
+                case ItemRarity.Fine:
+                    return Config.MagicEffectsCount.Fine.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
+				case ItemRarity.Masterwork:
+                    return Config.MagicEffectsCount.Masterwork.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
                 case ItemRarity.Rare:
                     return Config.MagicEffectsCount.Rare.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
-                case ItemRarity.Epic:
-                    return Config.MagicEffectsCount.Epic.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
+                case ItemRarity.Exotic:
+                    return Config.MagicEffectsCount.Exotic.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
                 case ItemRarity.Legendary:
                     return Config.MagicEffectsCount.Legendary.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
+				case ItemRarity.Ascended:
+                    return Config.AscendedEffectsCount.Ascended.Select(x => new KeyValuePair<int, int>(x[0], x[1])).ToList();
                 default:
                     throw new ArgumentOutOfRangeException(nameof(rarity), rarity, null);
             }
@@ -352,10 +356,12 @@ namespace EpicLoot
 
             Dictionary<ItemRarity, int> rarityWeights = new Dictionary<ItemRarity, int>()
             {
-                { ItemRarity.Magic, lootDrop.Rarity.Length >= 1 ? lootDrop.Rarity[0] : 0 },
+                { ItemRarity.Fine, lootDrop.Rarity.Length >= 1 ? lootDrop.Rarity[0] : 0 },
+				{ ItemRarity.Masterwork, lootDrop.Rarity.Length >= 1 ? lootDrop.Rarity[1] : 0 },
                 { ItemRarity.Rare, lootDrop.Rarity.Length >= 2 ? lootDrop.Rarity[1] : 0 },
-                { ItemRarity.Epic, lootDrop.Rarity.Length >= 3 ? lootDrop.Rarity[2] : 0 },
-                { ItemRarity.Legendary, lootDrop.Rarity.Length >= 4 ? lootDrop.Rarity[3] : 0 }
+                { ItemRarity.Exotic, lootDrop.Rarity.Length >= 3 ? lootDrop.Rarity[2] : 0 },
+                { ItemRarity.Legendary, lootDrop.Rarity.Length >= 4 ? lootDrop.Rarity[3] : 0 },
+				{ ItemRarity.Ascended, lootDrop.Rarity.Length >= 4 ? lootDrop.Rarity[3] : 0 }
             };
 
             _weightedRarityTable.Setup(rarityWeights, x => x.Value);
